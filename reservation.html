@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Modern Cut</title>
+
+    <!--flatpickr pour calendrié css open source https://flatpickr.js.org/getting-started-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!--Bootstarp css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+     crossorigin="anonymous">
+</head>
+
+<nav class="navbar  navbar-expand-lg navbar-dark bg-dark ">
+    <div class="container-fluid ">
+        <a class="navbar-brand">The Modern Cut</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" href="index.html">Acceuil</a>
+            <a class="nav-link" href="barbiers.html">Barbiers</a>
+            <a class="nav-link" href="services.html">Services</a>
+            <a class="nav-link active" aria-current="page" href="reservation.html">Reservation</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+          </div>
+        </div>
+
+    </div>
+</nav>
+
+<body>
+    <div class="lead text-center">
+        <h3>Reservation</h3>
+    </div>
+
+    <br><!--saute une ligne-->
+
+    <div class="container">
+
+        <!--debut du formulaire sous forme de tableau(row/col) de grandeur 12 colonnes-->
+        <form action="confirmation.html" class="row g-2 needs-validation">
+
+            
+            <div class="col-md-6">
+                <!--prénom-->
+                <label for="prenomInput" class="form-label">prénom</label>
+                <input type="text" class="form-control" id="prenomInput" required>
+            </div>
+                
+            <div class="col-md-6">
+                <!--nom-->
+                <label for="nomInput" class="form-label">nom</label>
+                <input type="text" class="form-control mx-auto" id="nomInput" required>
+            </div>
+
+            <div class="col-md-6">
+                <!--courriel-->
+                <label for="courrielInput" class="form-label">Email</label>
+                <input type="email" class="form-control" id="courrielInput" placeholder="nom@exemple.com" required>
+            </div>
+
+            <div class="col-md-6">
+                <!--numéro-->
+                <label for="numeroInput" class="form-label">numéro de téléphone (optionel)</label>
+                <input type="tel" class="form-control" id="numeroInput" placeholder="1234567891" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
+            </div>
+
+            <div class="col-md-6">
+                <!--barbier-->
+                <label for="barbierInput" class="form-label">barbier</label>
+                <select class="form-select" aria-describedby="validationServer05Feedback" id="barbierInput" required>
+                    <option selected disabled value="">choisir le barbier</option>
+                    <option value="1">Karl</option>
+                    <option value="2">Steven</option>
+                    <option value="3">Sam</option>
+                    <option value="4">Ange</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <!--service-->
+                <label for="serviceInput" class="form-label">service</label>
+                <select class="form-select" aria-label="Default select example" required>
+                    <option selected disabled value="">choisir le service</option>
+                    <option value="1">Dégradé - 25$</option>
+                    <option value="2">Dégradé style taper - 20$</option>
+                    <option value="3">coupe de cheuveux longue - 25$</option>
+                    <option value="4">coupe de cheuveux avec dessins ou motifs - 35$</option>
+                    <option value="5">Dégradé et barbe - 35$</option>
+                    <option value="6">Dégradé style taper et barbe - 30$</option>
+                    <option value="7">coupe de cheuveux longue et barbe - 35$</option>
+                    <option value="8">coupe de cheuveux avec dessins/motifs et barbe - 45$</option>                        
+                    <option value="9">enfant - 20$</option>
+                </select>
+            </div>
+            
+            <div class="col-md-6">
+                
+                <!--calendrier(datetime picker)-->
+                <p>choisir une date et une heure</p>
+                <input class="form-control" type="monCalendrier" placeholder="afficher le calendrier" required>
+
+            </div>
+
+            <div class="col-md-6">
+                <br>
+                <p class="text-center"> notez bien que vous pouvez prendre rendez-vous jusqu'a 2 semaine en avance</p>
+            </div>
+            
+            <div class="row">
+                <p><br></p>
+                <div class="d-grid gap-2 col-4 mx-auto"><button class="btn btn-dark" type="submit">réserver</button></div>
+            </div>
+            
+        </form><!--fin du formulaire-->
+        
+
+    </div>
+
+
+    
+    <!--flatpickr pour calendrier javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!--Bootstarp javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" 
+    crossorigin="anonymous"></script>
+
+    <!--configuration du calendrier-->
+    <script>
+        configuration = {
+            enableTime: true,
+            dateFormat: "Y-m-d H:i",
+            altInput: true,
+            altFormat: "F j, Y (h:S K)", 
+            minDate: "today",
+            maxDate: new Date().fp_incr(14), // 14 jours a partir de maintenant
+            minTime: "10:00",
+            maxTime: "17:30", 
+        }
+        flatpickr("input[type=monCalendrier]", configuration);
+    </script>
+
+</body>
+</html>
